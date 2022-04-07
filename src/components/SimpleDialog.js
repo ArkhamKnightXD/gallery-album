@@ -5,8 +5,8 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
-import PersonIcon from '@material-ui/icons/Person';
 import {List} from "@material-ui/core";
+import FastFoodIcon from '@material-ui/icons/Fastfood';
 
 
 function SimpleDialog(props) {
@@ -14,14 +14,16 @@ function SimpleDialog(props) {
     const {onClose, selectedValue, open} = props
 
 
-    const menu = ['helado', 'pizza', 'hot dog', 'cheese burger', 'bizcocho', 'nachos'];
+    const menu = ['helado', 'pizza', 'hot dog', 'cheese burger', 'bizcocho', 'nachos', 'palomitas','tacos','brownies'];
 
+    //esta funcion muestra un mensaje de lo que elegiste
     const handleClose = () => {
 
          alert(selectedValue)
         onClose(selectedValue)
     }
 
+    //esta funcion envia el valor seleccionado y llama la funcion que cierra el dialog
     const handleListItemClick = (value) => {
 
         onClose(value)
@@ -42,7 +44,7 @@ function SimpleDialog(props) {
                         <ListItem button onClick={() => handleListItemClick(menu)}>
                             <ListItemAvatar>
                                 <Avatar>
-                                    <PersonIcon/>
+                                    <FastFoodIcon/>
                                 </Avatar>
                             </ListItemAvatar>
                             <ListItemText primary={menu}/>

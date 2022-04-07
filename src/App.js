@@ -3,6 +3,7 @@ import DialogComponent from "./components/DialogComponent";
 
 
 import Gallery from "./components/Gallery";
+import TableForm from "./components/TableForm";
 
 
 
@@ -17,9 +18,12 @@ function App() {
 
 
 
-            <DialogComponent/>
+            {/*<DialogComponent/>*/}
 
 
+
+
+            <TableForm/>
 
 
         </div>
