@@ -4,6 +4,7 @@ import DialogComponent from "./components/DialogComponent";
 
 import Gallery from "./components/Gallery";
 import TableForm from "./components/TableForm";
+import TableSorting from "./components/TableSorting";
 
 
 
@@ -23,7 +24,10 @@ function App() {
 
 
 
-            <TableForm/>
+            {/*<TableForm/>*/}
+
+       <TableSorting/>
+
 
 
         </div>
