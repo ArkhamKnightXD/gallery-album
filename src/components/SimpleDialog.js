@@ -14,11 +14,11 @@ function SimpleDialog(props) {
     const {onClose, selectedValue, open} = props
 
 
-    const menu = ['helado', 'pizza', 'hot dog', 'cheese burger'];
+    const menu = ['helado', 'pizza', 'hot dog', 'cheese burger', 'bizcocho', 'nachos'];
 
     const handleClose = () => {
 
-        alert(selectedValue)
+         alert(selectedValue)
         onClose(selectedValue)
     }
 
@@ -34,7 +34,7 @@ function SimpleDialog(props) {
             <Dialog onClose={handleClose} open={open}>
 
 
-                <DialogTitle>Nicol Title?</DialogTitle>
+                <DialogTitle>Elige:</DialogTitle>
 
                 <List>
 

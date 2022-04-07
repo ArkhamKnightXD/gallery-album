@@ -23,7 +23,7 @@ function DialogComponent() {
         <>
 
 
-            <h3>You Selected: {selectedValue}</h3>
+            <h3>Usted seleccionó: {selectedValue}</h3>
 
             <button variant='outlined' color='primary' onClick={handleClickOpen}>
                 Open the Dart Dialog!
