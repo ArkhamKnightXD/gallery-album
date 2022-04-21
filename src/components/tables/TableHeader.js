@@ -9,7 +9,7 @@ import TableSortLabel from "@material-ui/core/TableSortLabel";
 
 function TableHeader(props){
 
-const {valueToOrderBy, orderDirection, handleRquestSort} = props
+const {valueToOrderBy, orderDirection, handleRequestSort} = props
 
     const createSortHandler  = (property) => (event) => {
         handleRequestSort(event, property)
