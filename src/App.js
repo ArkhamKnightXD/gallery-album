@@ -7,6 +7,8 @@ import TableForm from "./components/tables/TableForm";
 import TableSorting from "./components/tables/TableSorting";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import ContactForm from "./components/ContactForm";
+import DialogForm from "./components/DialogForm";
 
 
 
@@ -15,9 +17,18 @@ function App() {
 
     const [users, setUsers] = useState([]);
 
+
+
+    const [data, setData] = useState([
+
+        {name: "GTA5", genre: "Fighting", developer: "Rockstar Games", gameModes: "single-player, multiplayer"},
+        {name: "Fornite", genre: "Fighting", developer: "Epic Games", gameModes: "single-player, multiplayer"}
+    ]);
+
+
     function obtenerUsuarios(){
 
-        axios.get(`https://jsonplaceholder.typicode.com/users`).then(response => {
+        axios.get(`http://10.0.0.128:88/api/v1/video-games`).then(response => {
 
             console.log("Datos:", response.data);
 
@@ -50,10 +61,17 @@ function App() {
 
 
 
-            <TableForm rows={users}/>
+
 
        {/*<TableSorting/>*/}
 
+
+            {/*<ContactForm/>*/}
+
+        <DialogForm setData={setUsers} data={data} />
+
+
+            <TableForm rows={users}/>
 
 
         </div>

@@ -45,10 +45,9 @@ function TableForm({rows}) {
 
                             {/*Para indicar propiedades css, lo hacemos mediante parametros style.*/}
                             <TableCell style={headerStyle}>Name</TableCell>
-                            <TableCell style={headerStyle} align="right">Username</TableCell>
-                            <TableCell style={headerStyle} align="right">Phone</TableCell>
-                            <TableCell style={headerStyle} align="right">Email</TableCell>
-                            <TableCell style={headerStyle} align="right">Website</TableCell>
+                            <TableCell style={headerStyle} align="center">Genre</TableCell>
+                            <TableCell style={headerStyle} align="center">Developer</TableCell>
+                            <TableCell style={headerStyle} align="right">Game Modes</TableCell>
 
                         </TableRow>
 
@@ -64,10 +63,9 @@ function TableForm({rows}) {
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
-                                <TableCell align="right">{row.username}</TableCell>
-                                <TableCell align="right">{row.phone}</TableCell>
-                                <TableCell align="right">{row.email}</TableCell>
-                                <TableCell align="right">{row.website}</TableCell>
+                                <TableCell align="center">{row.genre}</TableCell>
+                                <TableCell align="center">{row.developer}</TableCell>
+                                <TableCell align="right">{row.gameModes}</TableCell>
 
                             </TableRow>
 
