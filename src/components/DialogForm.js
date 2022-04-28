@@ -51,7 +51,7 @@ export default function DialogForm({setData, videojuegoActual, handleClickOpen, 
         });
     }
 
-    //funcion de guardar
+    //funcion hace que se realize la funcion actualizar al dar click al boton add
     const handleSubmit = (event) => {
         event.preventDefault();
 

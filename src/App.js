@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 import DialogForm from "./components/DialogForm";
 
 
-//Lo ideal es no tener mucho codigo en app. Lo que se debe de hacer en app es llamar los componentes aqui
+
 function App() {
 
     const [videojuegos, setVideojuegos] = useState([]);
@@ -41,7 +41,7 @@ function App() {
 
     return (
 
-
+//Lo ideal es no tener mucho codigo en app. Lo que se debe de hacer en app es llamar los componentes aqui
         <div className="App">
             {/*<Gallery/>*/}
 
@@ -53,7 +53,7 @@ function App() {
 
 
             {/*<ContactForm/>*/}
-
+<br/>
             <DialogForm setData={setVideojuegos} videojuegoActual={videojuegoActual} isOpen={isOpen} setIsOpen={setIsOpen}
             handleClickOpen={handleClickOpen}/>
 
