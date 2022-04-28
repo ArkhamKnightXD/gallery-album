@@ -1,51 +1,42 @@
 import './App.css';
 import DialogComponent from "./components/DialogComponent";
-
-
 import Gallery from "./components/Gallery";
 import TableForm from "./components/tables/TableForm";
-import TableSorting from "./components/tables/TableSorting";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import ContactForm from "./components/ContactForm";
 import DialogForm from "./components/DialogForm";
-
 
 
 //Lo ideal es no tener mucho codigo en app. Lo que se debe de hacer en app es llamar los componentes aqui
 function App() {
 
-    const [users, setUsers] = useState([]);
+    const [videojuegos, setVideojuegos] = useState([]);
+    const [videojuegoActual, setVideojuegoActual] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
 
-
-
-    const [data, setData] = useState([
-
-        {name: "GTA5", genre: "Fighting", developer: "Rockstar Games", gameModes: "single-player, multiplayer"},
-        {name: "Fornite", genre: "Fighting", developer: "Epic Games", gameModes: "single-player, multiplayer"}
-    ]);
-
-
-    function obtenerUsuarios(){
-
+    function obtenerJuegos() {
+// get es para obtener elementos de la api
         axios.get(`http://10.0.0.128:88/api/v1/video-games`).then(response => {
 
-            console.log("Datos:", response.data);
+            setVideojuegos(response.data);
 
-
-            setUsers(response.data);
-        })
+        });
     }
+
+
+    const handleClickOpen = () => {
+
+        setIsOpen(true);
+    }
+
 
 
     useEffect(() => {
 
-        obtenerUsuarios();
-
+        obtenerJuegos();
 
 
     }, []);
-
 
 
     return (
@@ -55,23 +46,20 @@ function App() {
             {/*<Gallery/>*/}
 
 
-
             {/*<DialogComponent/>*/}
 
 
-
-
-
-
-       {/*<TableSorting/>*/}
+            {/*<TableSorting/>*/}
 
 
             {/*<ContactForm/>*/}
 
-        <DialogForm setData={setUsers} data={data} />
+            <DialogForm setData={setVideojuegos} videojuegoActual={videojuegoActual} isOpen={isOpen} setIsOpen={setIsOpen}
+            handleClickOpen={handleClickOpen}/>
 
 
-            <TableForm rows={users}/>
+            <TableForm rows={videojuegos} setVideojuegos={setVideojuegos} setVideojuegoActual={setVideojuegoActual}
+                       handleClickOpen={handleClickOpen}/>
 
 
         </div>
