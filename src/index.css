@@ -1,44 +1,44 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/**{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
 
 
 
 
-body {
-background: #2c5364;
-}
+/*body {*/
+/*background: #2c5364;*/
+/*}*/
 
-html {
-  font-family: sans-serif;
-}
-
-
-.App{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/*html {*/
+/*  font-family: sans-serif;*/
+/*}*/
 
 
-.card{
-  background: white;
-  padding: 3rem 5rem;
-  border-radius: 2rem;
-}
+/*.App{*/
+/*  min-height: 100vh;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
 
 
-.card p{
-  padding-top: 1rem;
-  line-height: 150%;
-}
+/*.card{*/
+/*  background: white;*/
+/*  padding: 3rem 5rem;*/
+/*  border-radius: 2rem;*/
+/*}*/
 
 
-.expand{
-width: 35rem;
-}
+/*.card p{*/
+/*  padding-top: 1rem;*/
+/*  line-height: 150%;*/
+/*}*/
+
+
+/*.expand{*/
+/*width: 35rem;*/
+/*}*/
 
 
