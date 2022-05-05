@@ -1,7 +1,7 @@
 import './App.css';
 import './index.css';
 import {motion, AnimatePresence} from 'framer-motion';
-import Images from "./Images";
+import Images from "./components/slider/Images";
 import {useRef, useEffect, useState} from 'react';
 import DialogComponent from "./components/DialogComponent";
 import Gallery from "./components/Gallery";
@@ -10,7 +10,7 @@ import axios from "axios";
 
 import DialogForm from "./components/DialogForm";
 import {Button} from "@material-ui/core";
-
+import FramerMotion from "./components/slider/FramerMotion";
 
 
 function App() {
@@ -46,12 +46,7 @@ function App() {
 //}
 
 
-
-
 // const [isOpen, setIsOpen] = useState([false])
-
-
-
 
 
     return (
@@ -69,62 +64,45 @@ function App() {
             {/*<ContactForm/>*/}
 
 
-                   {/*game-form*/}
+            {/*game-form*/}
 
 
-                   {/*<br/>*/}
-{/*            <DialogForm setData={setVideojuegos} videojuegoActual={videojuegoActual} isOpen={isOpen} setIsOpen={setIsOpen}*/}
-{/*            handleClickOpen={handleClickOpen}/>*/}
+            {/*<br/>*/}
+            {/*            <DialogForm setData={setVideojuegos} videojuegoActual={videojuegoActual} isOpen={isOpen} setIsOpen={setIsOpen}*/}
+            {/*            handleClickOpen={handleClickOpen}/>*/}
 
 
-{/*            <TableForm rows={videojuegos} setVideojuegos={setVideojuegos} setVideojuegoActual={setVideojuegoActual}*/}
-{/*                       handleClickOpen={handleClickOpen}/>*/}
+            {/*            <TableForm rows={videojuegos} setVideojuegos={setVideojuegos} setVideojuegoActual={setVideojuegoActual}*/}
+            {/*                       handleClickOpen={handleClickOpen}/>*/}
 
 
-{/*framer-motion*/}
+            {/*framer-motion*/}
 
-{/*<motion.div transition={{layout: {duration: 1, type: "spring"}}} layout onClick={() => setIsOpen(!isOpen)}*/}
-{/*            className="card" style={{borderRadius: "1rem", boxShadow: "0px 10px 30px rgba(0,0,0,0.5)"}} >*/}
+            {/*<motion.div transition={{layout: {duration: 1, type: "spring"}}} layout onClick={() => setIsOpen(!isOpen)}*/}
+            {/*            className="card" style={{borderRadius: "1rem", boxShadow: "0px 10px 30px rgba(0,0,0,0.5)"}} >*/}
 
-{/*<motion.h2 layout="position">Framer Motion 🚀</motion.h2>*/}
-{/*    {isOpen && (*/}
-{/*    <motion.div>*/}
-{/*        <p initial={{opacity: 0}}*/}
-{/*           animate={{opacity: 1}}*/}
-{/*           transition={{duration: 1}}*/}
-{/*           exit={{opacity: 0}} className="expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum justo sed tempus aliquet.*/}
-{/*            Praesent luctus eleifend finibus. Pellentesque tincidunt.</p>*/}
-{/*        <p>turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet</p>*/}
-{/*        <Button className="button01">hide</Button>*/}
-{/*    </motion.div>*/}
-{/*    )}*/}
-
-{/*</motion.div>*/}
+            {/*<motion.h2 layout="position">Framer Motion 🚀</motion.h2>*/}
+            {/*    {isOpen && (*/}
+            {/*    <motion.div>*/}
+            {/*        <p initial={{opacity: 0}}*/}
+            {/*           animate={{opacity: 1}}*/}
+            {/*           transition={{duration: 1}}*/}
+            {/*           exit={{opacity: 0}} className="expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum justo sed tempus aliquet.*/}
+            {/*            Praesent luctus eleifend finibus. Pellentesque tincidunt.</p>*/}
+            {/*        <p>turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet</p>*/}
+            {/*        <Button className="button01">hide</Button>*/}
+            {/*    </motion.div>*/}
+            {/*    )}*/}
 
 
-
-            <motion.div className="carousel">
-                <motion.div className="inner-carousel">
-                    {Images.map(image =>{
-                        return(
-                           <motion.div className="item">
-                               <img src={image} alt=""/>
-                           </motion.div>
-                        );
-                    })}
-
-                </motion.div>
-            </motion.div>
+            <h1>React Slider</h1>
+            <br/>
+            <FramerMotion/>
 
 
+        </div>
 
-
-
-
-
-       </div>
-
-        );
+    );
 }
 
 
