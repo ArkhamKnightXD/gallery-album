@@ -27,7 +27,8 @@ export default function FramerMotion() {
                 y si es y sera de arriba a abajo. En dragconstraints se indica el rango de movimiento del slider.*/}
                 <motion.div drag="x" dragConstraints={{right: 0, left: -width}} className="inner-carousel">
 
-                    {/*Aqui se muestra el nuevo arreglo*/}
+                    {/*Aqui se muestra el nuevo arreglo, lo que este dentro ese map se va a repetir por la cantidad de
+                    elementos que contenga el arreglo.*/}
                     {Images.map((image) => {
                         return (
                             <motion.div className="item" key={image}>
