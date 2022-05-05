@@ -3,6 +3,7 @@ import './index.css';
 import {motion, AnimatePresence} from 'framer-motion';
 import Images from "./components/slider/Images";
 import {useRef, useEffect, useState} from 'react';
+
 import DialogComponent from "./components/forms/DialogComponent";
 import Gallery from "./components/Gallery";
 import TableForm from "./components/tables/TableForm";
@@ -14,6 +15,8 @@ import FramerMotion from "./components/slider/FramerMotion";
 import CardAnimation from "./components/card-animation/CardAnimation";
 import TableSorting from "./components/tables/TableSorting";
 import Calculadora from "./components/calculator/Calculadora";
+import Header from "./components/todolist/Header";
+import TodoList from "./components/todolist/TodoList";
 
 
 function App() {
@@ -89,7 +92,11 @@ function App() {
             {/*<CardAnimation/>*/}
 
 
-            <Calculadora/>
+            {/*<Calculadora/>*/}
+
+            <TodoList/>
+
+
 
         </div>
 
