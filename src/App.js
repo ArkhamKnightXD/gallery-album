@@ -1,16 +1,19 @@
-import './App.css';
+// import './App.css';
 import './index.css';
 import {motion, AnimatePresence} from 'framer-motion';
 import Images from "./components/slider/Images";
 import {useRef, useEffect, useState} from 'react';
-import DialogComponent from "./components/DialogComponent";
+import DialogComponent from "./components/forms/DialogComponent";
 import Gallery from "./components/Gallery";
 import TableForm from "./components/tables/TableForm";
 import axios from "axios";
 
-import DialogForm from "./components/DialogForm";
+import DialogForm from "./components/forms/DialogForm";
 import {Button} from "@material-ui/core";
 import FramerMotion from "./components/slider/FramerMotion";
+import CardAnimation from "./components/card-animation/CardAnimation";
+import TableSorting from "./components/tables/TableSorting";
+import Calculadora from "./components/calculator/Calculadora";
 
 
 function App() {
@@ -43,10 +46,8 @@ function App() {
 //
 //     }, []);
 
-//}
 
 
-// const [isOpen, setIsOpen] = useState([false])
 
 
     return (
@@ -60,8 +61,6 @@ function App() {
             {/*<DialogComponent/>*/}
 
             {/*<TableSorting/>*/}
-
-            {/*<ContactForm/>*/}
 
 
             {/*game-form*/}
@@ -78,27 +77,19 @@ function App() {
 
             {/*framer-motion*/}
 
-            {/*<motion.div transition={{layout: {duration: 1, type: "spring"}}} layout onClick={() => setIsOpen(!isOpen)}*/}
-            {/*            className="card" style={{borderRadius: "1rem", boxShadow: "0px 10px 30px rgba(0,0,0,0.5)"}} >*/}
-
-            {/*<motion.h2 layout="position">Framer Motion 🚀</motion.h2>*/}
-            {/*    {isOpen && (*/}
-            {/*    <motion.div>*/}
-            {/*        <p initial={{opacity: 0}}*/}
-            {/*           animate={{opacity: 1}}*/}
-            {/*           transition={{duration: 1}}*/}
-            {/*           exit={{opacity: 0}} className="expand">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum justo sed tempus aliquet.*/}
-            {/*            Praesent luctus eleifend finibus. Pellentesque tincidunt.</p>*/}
-            {/*        <p>turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet</p>*/}
-            {/*        <Button className="button01">hide</Button>*/}
-            {/*    </motion.div>*/}
-            {/*    )}*/}
+            {/*Si una variable que esta en true, tiene un ! , pasara a ser falso, y viceversa.*/}
 
 
-            <h1>React Slider</h1>
-            <br/>
-            <FramerMotion/>
 
+            {/*<h1>React Slider</h1>*/}
+            {/*<br/>*/}
+            {/*<FramerMotion/>*/}
+
+
+            {/*<CardAnimation/>*/}
+
+
+            <Calculadora/>
 
         </div>
 

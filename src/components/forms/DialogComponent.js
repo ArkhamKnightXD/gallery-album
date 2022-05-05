@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import SimpleDialog from "./SimpleDialog";
-import '../App.css';
+import '../../App.css';
 
 function DialogComponent() {
 
