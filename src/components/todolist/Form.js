@@ -1,4 +1,4 @@
-import react, {useEffect} from 'react';
+import {useEffect} from 'react';
 import '../../App.css';
 import {v4 as uuidv4} from "uuid";
 
@@ -13,14 +13,14 @@ export default function Form({input, setInput, todos, setTodos, editTodo, setEdi
         setEditTodo("");
     };
 
-    // useEffect(() => {
-    //
-    //     if(editTodo){
-    //         setInput(editTodo.title);
-    //     } else{
-    //         setInput("")
-    //     }
-    // }, [setInput, editTodo]);
+    useEffect(() => {
+
+        if(editTodo){
+            setInput(editTodo.title);
+        } else{
+            setInput("")
+        }
+    }, [setInput, editTodo]);
 
 
     const onInputChange = (event) => {

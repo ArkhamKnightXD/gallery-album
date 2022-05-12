@@ -1,5 +1,5 @@
 // import './App.css';
-import './index.css';
+//import './index.css';
 import {motion, AnimatePresence} from 'framer-motion';
 import Images from "./components/slider/Images";
 import {useRef, useEffect, useState} from 'react';
@@ -17,6 +17,7 @@ import TableSorting from "./components/tables/TableSorting";
 import Calculadora from "./components/calculator/Calculadora";
 import Header from "./components/todolist/Header";
 import TodoList from "./components/todolist/TodoList";
+import WeatherApp from "./components/weather/WeatherApp";
 
 
 function App() {
@@ -94,9 +95,15 @@ function App() {
 
             {/*<Calculadora/>*/}
 
-            <TodoList/>
+
+            {/*falta terminar*/}
+            {/*<TodoList/>*/}
 
 
+
+
+
+<WeatherApp/>
 
         </div>
 
