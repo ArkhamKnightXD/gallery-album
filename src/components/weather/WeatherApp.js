@@ -28,8 +28,8 @@ export default function WeatherApp() {
 
 
     const dateBuilder = (d) => {
-        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        let days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 
         let day = days[d.getDay()];
         let date = d.getDate();
@@ -42,6 +42,9 @@ export default function WeatherApp() {
 
     return (
         <div className={
+
+            //En primer lugar se verifica que haya datos para elegir el fondo por defecto.
+            //En la segunda verificacion, se verifica que la temperatura sea mayor a 16 grados y si es mayor elige la imagen de fondo.
             (typeof weather.main != "undefined" ) ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
 
             <main>
@@ -62,6 +65,8 @@ export default function WeatherApp() {
 
                         <div className="weather-box">
                             <div className="temp">
+
+                                {/*Math.round sirve para redondear los numeros al entero mas cercano.*/}
                                 {Math.round(weather.main.temp)}°c
                             </div>
                             <div className="weather">{weather.weather[0].main}</div>
