@@ -18,6 +18,7 @@ import Calculadora from "./components/calculator/Calculadora";
 import Header from "./components/todolist/Header";
 import TodoList from "./components/todolist/TodoList";
 import WeatherApp from "./components/weather/WeatherApp";
+import QuizApp from "./components/quiz/QuizApp";
 
 
 function App() {
@@ -103,7 +104,10 @@ function App() {
 
 
 
-<WeatherApp/>
+{/*<WeatherApp/>*/}
+
+
+            <QuizApp/>
 
         </div>
 
