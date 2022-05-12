@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
 import '../../index.css';
+import {useNavigate} from "react-router-dom";
 
 
 
 
 export default function  QuizApp() {
+
+let navigate = useNavigate();
+
+
+
+
 
     const questions = [
         {
@@ -115,6 +122,12 @@ export default function  QuizApp() {
                 </>
             )}
 
+
+
+
+            <button onClick={() => {
+                navigate('/Calculadora');
+            }}>{""} Change</button>
         </div>
     );
 }

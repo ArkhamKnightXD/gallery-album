@@ -1,4 +1,5 @@
 // import './App.css';
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 //import './index.css';
 import {motion, AnimatePresence} from 'framer-motion';
 import Images from "./components/slider/Images";
@@ -19,6 +20,10 @@ import Header from "./components/todolist/Header";
 import TodoList from "./components/todolist/TodoList";
 import WeatherApp from "./components/weather/WeatherApp";
 import QuizApp from "./components/quiz/QuizApp";
+import About from "./About";
+import Profile from "./Profile";
+import ErrorPage from "./ErrorPage";
+import Home from "./Home";
 
 
 function App() {
@@ -59,8 +64,21 @@ function App() {
 
 //Lo ideal es no tener mucho codigo en app. Lo que se debe de hacer en app es llamar los componentes aqui
 
-        <div className="App">
+        <Router>
 
+       <nav>
+           <Link to="/">Home</Link>
+           <Link to="/About">About</Link>
+           <Link to="/Profile">Profile</Link>
+
+       </nav>
+<Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/About" element={<About/>}/>
+    <Route path="/Profile" element={<Profile/>}/>
+    <Route path="*" element={<ErrorPage/>}/>
+<div>Footer</div>
+</Routes>
             {/*<Gallery/>*/}
 
             {/*<DialogComponent/>*/}
@@ -107,9 +125,9 @@ function App() {
 {/*<WeatherApp/>*/}
 
 
-            <QuizApp/>
+            {/*<QuizApp/>*/}
 
-        </div>
+        </Router>
 
     );
 }
