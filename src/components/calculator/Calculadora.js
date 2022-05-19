@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import "../../index.css";
+import "./calculator.css";
 
 
 export default function Calculadora() {

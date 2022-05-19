@@ -1,6 +1,7 @@
 import {motion} from "framer-motion";
 import Images from "./Images";
 import {useRef, useEffect, useState} from 'react';
+import './framer.css';
 
 
 export default function FramerMotion() {

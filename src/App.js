@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 //import './index.css';
 import {motion, AnimatePresence} from 'framer-motion';
 import Images from "./components/slider/Images";
-import {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 
 import DialogComponent from "./components/forms/DialogComponent";
 import Gallery from "./components/Gallery";
@@ -24,6 +24,7 @@ import About from "./About";
 import Profile from "./Profile";
 import ErrorPage from "./ErrorPage";
 import Home from "./Home";
+import Navbar from "./components/navbar/Navbar";
 
 
 function App() {
@@ -57,28 +58,51 @@ function App() {
 //     }, []);
 
 
-
-
-
     return (
 
 //Lo ideal es no tener mucho codigo en app. Lo que se debe de hacer en app es llamar los componentes aqui
 
-        <Router>
 
-       <nav>
-           <Link to="/">Home</Link>
-           <Link to="/About">About</Link>
-           <Link to="/Profile">Profile</Link>
 
-       </nav>
-<Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/About" element={<About/>}/>
-    <Route path="/Profile/:username" element={<Profile/>}/>
-    <Route path="*" element={<ErrorPage/>}/>
-<div>Footer</div>
-</Routes>
+        <>
+            {/*<QuizApp/>*/}
+
+            <Router>
+
+                <Navbar/>
+
+                <Routes>
+
+
+                    <Route path="/gallery" element={<Gallery/>}/>
+                    <Route path="/quizapp" element={<QuizApp/>}/>
+                    <Route path="/framermotion" element={<FramerMotion/>}/>
+                    <Route path="/cardanimation" element={<CardAnimation/>}/>
+                    <Route path="/calculadora" element={<Calculadora/>}/>
+                    <Route path="/todolist" element={<TodoList/>}/>
+
+                    <Route path="/tablesorting" element={<TableSorting/>}/>
+                    <Route path="/weatherapp" element={<WeatherApp/>}/>
+                    <Route path="/dialogcomponent" element={<DialogComponent/>}/>
+
+                </Routes>
+
+
+            </Router>
+
+
+
+        </>
+
+
+
+    );
+}
+
+
+
+
+
             {/*<Gallery/>*/}
 
             {/*<DialogComponent/>*/}
@@ -103,7 +127,6 @@ function App() {
             {/*Si una variable que esta en true, tiene un ! , pasara a ser falso, y viceversa.*/}
 
 
-
             {/*<h1>React Slider</h1>*/}
             {/*<br/>*/}
             {/*<FramerMotion/>*/}
@@ -119,18 +142,14 @@ function App() {
             {/*<TodoList/>*/}
 
 
-
-
-
-{/*<WeatherApp/>*/}
+            {/*<WeatherApp/>*/}
 
 
             {/*<QuizApp/>*/}
 
-        </Router>
+        // </Router>
 
-    );
-}
+
 
 
 export default App;

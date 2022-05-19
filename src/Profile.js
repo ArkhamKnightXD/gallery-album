@@ -1,14 +1,20 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 
 export default function Profile() {
 
 let navigate = useNavigate();
+let { username } = useParams();
+
     return(
-        <>
-            THIS IS THE PROFILE PAGE <button onClick={() => {navigate("/about")}}>Change to about</button>
-        </>
+        <div>
+
+            THIS IS THE PROFILE PAGE FOR {username}!
+            &nbsp;
+            <button onClick={() => {navigate("/about")}}>Change to about</button>
+
+        </div>
     );
 }

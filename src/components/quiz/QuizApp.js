@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../../index.css';
+import './quiz.css';
 import {useNavigate} from "react-router-dom";
 
 
@@ -95,7 +95,7 @@ let navigate = useNavigate();
     }
 
     return(
-        <div className="app">
+        <div className="app-quiz">
 
             {/*Aqui pregunta si showscore es true y si es true muestra la puntuacion y si no, muestra las preguntas
             (esto es basicamente un if).*/}
@@ -116,7 +116,7 @@ let navigate = useNavigate();
                     </div>
                     <div className="answer-section">
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
-                            <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                            <button className="button-quiz" onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
                         ))}
                     </div>
                 </>
@@ -125,9 +125,7 @@ let navigate = useNavigate();
 
 
 
-            <button onClick={() => {
-                navigate('/Calculadora');
-            }}>{""} Change</button>
+
         </div>
     );
 }

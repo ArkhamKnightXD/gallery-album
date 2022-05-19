@@ -1,0 +1,58 @@
+
+/*card animation*/
+
+body {
+background: #2c5364;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+
+.App{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card{
+  background: white;
+  padding: 3rem 5rem;
+  border-radius: 2rem;
+    color: #000;
+text-align: center;
+    width: 50%;
+    margin: 10%;
+}
+
+
+.card p{
+  padding-top: 1rem;
+  line-height: 150%;
+}
+
+
+.expand{
+width: 35rem;
+    color: black;
+}
+
+.expand2{
+    color: black;
+}
+
+
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 10% 20%;
+}
+
+.button01{
+    color: black;
+
+}
+
