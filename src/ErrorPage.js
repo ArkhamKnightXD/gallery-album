@@ -3,7 +3,7 @@ export default function ErrorPage() {
 
     return(
         <>
-            THIS IS THE ERRORPAGE
+            ERROR! PAGE NOT FOUND.
         </>
     );
 }

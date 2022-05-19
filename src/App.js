@@ -75,7 +75,7 @@ function App() {
 <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/About" element={<About/>}/>
-    <Route path="/Profile" element={<Profile/>}/>
+    <Route path="/Profile/:username" element={<Profile/>}/>
     <Route path="*" element={<ErrorPage/>}/>
 <div>Footer</div>
 </Routes>
