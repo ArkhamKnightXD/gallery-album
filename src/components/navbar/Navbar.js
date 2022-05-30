@@ -1,16 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom";
 import './nav.css';
-import QuizApp from "../quiz/QuizApp";
-import FramerMotion from "../slider/FramerMotion";
-import CardAnimation from "../card-animation/CardAnimation";
-import Calculadora from "../calculator/Calculadora";
-import TodoList from "../todolist/TodoList";
-import Gallery from "../Gallery";
-import TableSorting from "../tables/TableSorting";
-import WeatherApp from "../weather/WeatherApp";
-import DialogComponent from "../forms/DialogComponent";
+
 
 export default function Navbar(){
 
@@ -26,10 +17,6 @@ export default function Navbar(){
 
             <nav className="item02">
                 <ul className="ul">
-
-                    {/*<li>*/}
-                    {/*    <Link to="/">Home</Link>*/}
-                    {/*</li>*/}
 
                     <li>
                         <Link to="/">Gallery</Link>
