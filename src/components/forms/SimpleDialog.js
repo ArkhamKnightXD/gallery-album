@@ -36,7 +36,7 @@ function SimpleDialog(props) {
             <Dialog onClose={handleClose} open={open}>
 
 
-                <DialogTitle>Elige:</DialogTitle>
+                <DialogTitle style={{color: "black"}}>Elige:</DialogTitle>
 
                 <List>
 
@@ -47,7 +47,7 @@ function SimpleDialog(props) {
                                     <FastFoodIcon/>
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText primary={menu}/>
+                            <ListItemText style={{color: "#000"}} primary={menu}/>
                         </ListItem>
                     ))}
 

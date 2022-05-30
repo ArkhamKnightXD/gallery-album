@@ -5,6 +5,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import TablePagination from "@material-ui/core/TablePagination";
 import {TableContainer, TableHead} from "@material-ui/core";
+import '../../App.css';
 
 
 const rowInformation = [
@@ -69,7 +70,7 @@ function TableContent() {
 
     return (
 
-        <>
+        <div className="app-table">
 
             <TableContainer>
                 <Table>
@@ -99,7 +100,7 @@ function TableContent() {
                              rowsPerPage={rowsPerPage}
                              page={page} onChangePage={handleChangePage}
                              onChangeRowsPerPage={handleChangesRowsPerPage}/>
-        </>
+        </div>
 
     );
 }

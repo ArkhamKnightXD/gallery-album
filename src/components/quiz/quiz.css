@@ -12,11 +12,11 @@ body {
 }
 * {
   font-family: "Verdana", cursive, sans-serif;
-  color: #ffffff;
+
 }
 
 body {
-  background-color: #7cc6fe;
+  /*background-color: #7cc6fe;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +33,9 @@ body {
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
+  margin: 20% auto;
+  color: #ffffff;
+
 }
 
 .score-section {

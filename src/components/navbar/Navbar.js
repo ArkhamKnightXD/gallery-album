@@ -24,15 +24,15 @@ export default function Navbar(){
                 Menu
             </div>
 
-            <nav className="item">
+            <nav className="item02">
                 <ul className="ul">
 
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
+                    {/*<li>*/}
+                    {/*    <Link to="/">Home</Link>*/}
+                    {/*</li>*/}
 
                     <li>
-                        <Link to="/Gallery">Gallery</Link>
+                        <Link to="/">Gallery</Link>
                     </li>
 
                     <li>
@@ -52,7 +52,7 @@ export default function Navbar(){
                     </li>
 
                     <li>
-                        <Link to="/TodoList">To do List</Link>
+                        <Link to="/TableForm">Table-Form</Link>
                     </li>
 
 
@@ -62,10 +62,6 @@ export default function Navbar(){
 
                     <li>
                         <Link to="/WeatherApp">Weather</Link>
-                    </li>
-
-                    <li>
-                        <Link to="/TableSorting">Table-Sorting</Link>
                     </li>
 
                 </ul>

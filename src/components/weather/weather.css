@@ -1,15 +1,16 @@
 
 /*!*weather app*!*/
 
-.app01{
-  background-image: url('assets/cold-bg.jpg');
+#app01{
+  background-image: url('assets/cold2-bg.jpg');
   background-size: cover;
   background-position: bottom;
+  background-repeat: no-repeat;
   transition: 0.4s ease-out;
 }
 
-.app.warm{
-  background-image: url('assets/warm-bg.jpg');
+#app01.warm{
+  background-image: url('assets/warm2-bg.jpg');
 }
 
 

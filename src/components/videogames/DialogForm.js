@@ -2,9 +2,10 @@ import Dialog from "@material-ui/core/Dialog";
 import React, {useEffect, useState} from "react";
 import {Button, Card, CardContent, Grid, InputLabel, Select, TextField, Typography} from "@material-ui/core";
 import axios from "axios";
+import './games.css';
 
 
-export default function DialogForm({setData, videojuegoActual, handleClickOpen, isOpen, setIsOpen}) {
+export default function DialogForm({setVideojuegos, videojuegoActual, handleClickOpen, isOpen, setIsOpen}) {
 
     //estados
     const [name, setName] = useState("");
@@ -39,7 +40,7 @@ export default function DialogForm({setData, videojuegoActual, handleClickOpen, 
 
         //post es para insertar elementos en el api
         axios.post(`http://10.0.0.128:88/api/v1/video-games`, data).then(r => {
-            setData(r.data);
+            setVideojuegos(r.data);
         });
     }
 
@@ -47,7 +48,7 @@ export default function DialogForm({setData, videojuegoActual, handleClickOpen, 
 
         //post es para insertar elementos en el api
         axios.put(`http://10.0.0.128:88/api/v1/video-games`, data).then(r => {
-            setData(r.data);
+            setVideojuegos(r.data);
         });
     }
 
@@ -107,9 +108,9 @@ export default function DialogForm({setData, videojuegoActual, handleClickOpen, 
 
     return (
 
-        <>
+        <div className="app-games">
 
-            <Button className="button" variant='outlined' color='primary' onClick={handleClickOpen}>
+            <Button className="button-game" variant='outlined' color='primary' onClick={handleClickOpen}>
                 Agregar Juego
             </Button>
 
@@ -179,7 +180,7 @@ export default function DialogForm({setData, videojuegoActual, handleClickOpen, 
                 </Card>
 
             </Dialog>
-        </>
+        </div>
 
 
     );

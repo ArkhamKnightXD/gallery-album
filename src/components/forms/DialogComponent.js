@@ -21,10 +21,10 @@ function DialogComponent() {
 
     return (
 
-        <>
+        <div className="app-dialog">
 
 
-            <h3>Usted seleccionó: {selectedValue}</h3>
+            <h3 style={{marginTop: "4%"}}>Usted seleccionó: {selectedValue}</h3>
 
             <button className="button" variant='outlined' color='primary' onClick={handleClickOpen}>
                 Open the Dart Dialog!
@@ -34,7 +34,7 @@ function DialogComponent() {
 
 
 
-        </>
+        </div>
     );
 }
 

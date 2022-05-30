@@ -7,10 +7,10 @@ import React, {useRef, useEffect, useState} from 'react';
 
 import DialogComponent from "./components/forms/DialogComponent";
 import Gallery from "./components/Gallery";
-import TableForm from "./components/tables/TableForm";
+import TableForm from "./components/videogames/TableForm";
 import axios from "axios";
 
-import DialogForm from "./components/forms/DialogForm";
+import DialogForm from "./components/videogames/DialogForm";
 import {Button} from "@material-ui/core";
 import FramerMotion from "./components/slider/FramerMotion";
 import CardAnimation from "./components/card-animation/CardAnimation";
@@ -29,33 +29,6 @@ import Navbar from "./components/navbar/Navbar";
 
 function App() {
 
-//     const [videojuegos, setVideojuegos] = useState([]);
-//     const [videojuegoActual, setVideojuegoActual] = useState(null);
-//     const [isOpen, setIsOpen] = useState(false);
-//
-//     function obtenerJuegos() {
-// // get es para obtener elementos de la api
-//         axios.get(`http://10.0.0.128:88/api/v1/video-games`).then(response => {
-//
-//             setVideojuegos(response.data);
-//
-//         });
-//     }
-//
-//
-//     const handleClickOpen = () => {
-//
-//         setIsOpen(true);
-//     }
-//
-//
-//
-//     useEffect(() => {
-//
-//         obtenerJuegos();
-//
-//
-//     }, []);
 
 
     return (
@@ -74,14 +47,12 @@ function App() {
                 <Routes>
 
 
-                    <Route path="/gallery" element={<Gallery/>}/>
+                    <Route path="/" element={<Gallery/>}/>
                     <Route path="/quizapp" element={<QuizApp/>}/>
                     <Route path="/framermotion" element={<FramerMotion/>}/>
                     <Route path="/cardanimation" element={<CardAnimation/>}/>
                     <Route path="/calculadora" element={<Calculadora/>}/>
-                    <Route path="/todolist" element={<TodoList/>}/>
-
-                    <Route path="/tablesorting" element={<TableSorting/>}/>
+                    <Route path="/tableform" element={<TableForm/>}/>
                     <Route path="/weatherapp" element={<WeatherApp/>}/>
                     <Route path="/dialogcomponent" element={<DialogComponent/>}/>
 
@@ -89,6 +60,12 @@ function App() {
 
 
             </Router>
+
+
+
+
+
+
 
 
 

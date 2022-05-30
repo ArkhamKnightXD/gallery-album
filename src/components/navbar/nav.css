@@ -16,9 +16,10 @@ body{
 
 .sum {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: black;
+
 }
 
 .logo {
@@ -29,7 +30,7 @@ body{
 }
 
 
-.item {
+.item02 {
     display: flex;
 
     position: relative;

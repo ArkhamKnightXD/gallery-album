@@ -14,14 +14,14 @@ export default function  CardAnimation(){
             <motion.div transition={{layout: {duration: 1, type: "spring"}}} layout onClick={() => setIsOpen(!isOpen)}
                         className="card" style={{borderRadius: "1rem", boxShadow: "0px 10px 30px rgba(0,0,0,0.5)"}}>
 
-                <motion.h2 layout="position" style={{color: '#000'}}>Framer Motion 🚀</motion.h2>
+                <motion.h2 layout="position" style={{color: '#000'}}>Card Animation 🚀</motion.h2>
                 {isOpen && (
                     <motion.div>
                         <p initial={{opacity: 0}}
                            animate={{opacity: 1}}
                            transition={{duration: 1}}
                            exit={{opacity: 0}} className="expand">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Donec dictum justo sed tempus aliquet.
+                            elit.<br/>
                             Praesent luctus eleifend finibus. Pellentesque tincidunt.</p>
                         <p className="expand2">turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet</p>
                         <Button className="button01" style={{color: '#000'}}>hide</Button>

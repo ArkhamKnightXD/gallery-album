@@ -33,25 +33,40 @@
     width: auto;
 }
 
-.button:hover,
-.button:focus {
-    background-color: #3f51b5;
+.button:hover{
+    background-color: #9c4203;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .button:hover {
     transform: translateY(-1px);
-    color: #3f51b5;
 }
 
 .button:active {
-    background-color: #c85000;
+    background-color: #fa6400;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
 }
 
+.app-dialog{
+    margin: 25% auto;
+    text-align: center;
+}
 
+.app-table{
+    margin: 24% auto;
+
+}
+
+
+.app-games{
+    margin-top: 3%;
+}
+
+.btn-games{
+background-color: #3f51b5;
+}
 
 /*framer-motion*/
 

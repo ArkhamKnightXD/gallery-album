@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,6 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import {Button} from "@material-ui/core";
 import axios from "axios";
+import DialogForm from "./DialogForm";
 
 //Esta es una forma de dar estilos en react. Esto indica que la tabla va a tener un ancho minimo de 650px.
 const useStyles = makeStyles({
@@ -24,40 +25,68 @@ const headerStyle = {
 }
 
 
-function TableForm({rows , setVideojuegos, setVideojuegoActual, handleClickOpen}) {
+function TableForm() {
 
     const classes = useStyles();
 
+    const [videojuegos, setVideojuegos] = useState([]);
+    const [videojuegoActual, setVideojuegoActual] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+
+    function obtenerJuegos() {
+// get es para obtener elementos de la api
+        axios.get(`http://10.0.0.128:88/api/v1/video-games`).then(response => {
+
+            setVideojuegos(response.data);
+
+        });
+    }
+
+
+    const handleClickOpen = () => {
+
+        setIsOpen(true);
+    }
+
+
+    useEffect(() => {
+
+        obtenerJuegos();
+
+
+    }, []);
+
+
     //delete sirve para borrar elementos del api
-    function deleteJuego(videogameID){
+    function deleteJuego(videogameID) {
 
         axios.delete(`http://10.0.0.128:88/api/v1/video-games/${videogameID}`).then(response => {
 
             setVideojuegos(response.data);
-
         });
 
     }
 
 
-    function obtenerJuegoactual(videogameID){
+    function obtenerJuegoactual(videogameID) {
 
         axios.get(`http://10.0.0.128:88/api/v1/video-games/${videogameID}`).then(response => {
 
             setVideojuegoActual(response.data);
-
 
         });
         handleClickOpen();
     }
 
 
-
     return (
 
         <>
 
-            <TableContainer >
+            <DialogForm handleClickOpen={handleClickOpen} videojuegoActual={videojuegoActual}
+                        setVideojuegos={setVideojuegos} isOpen={isOpen} setIsOpen={setIsOpen}/>
+
+            <TableContainer>
 
                 <Table className={classes.table} aria-label="simple-table">
 
@@ -84,7 +113,7 @@ function TableForm({rows , setVideojuegos, setVideojuegoActual, handleClickOpen}
                     es una lista a la que se le aplica el metodo map.*/}
                     <TableBody>
 
-                        {rows.map((row) => (
+                        {videojuegos.map((row) => (
 
                             <TableRow key={row.name}>
                                 <TableCell component="th" scope="row">
@@ -100,11 +129,12 @@ function TableForm({rows , setVideojuegos, setVideojuegoActual, handleClickOpen}
                                     esta funcion se ejecutara siempre lo cual dara un error.*/}
 
                                     <Button variant='outlined' color="secondary" onClick={() => deleteJuego(row.id)}>
-                                       DELETE
+                                        DELETE
                                     </Button>
                                     &nbsp;&nbsp;&nbsp;
-                                    <Button  variant='outlined' color="inherit" onClick={() => obtenerJuegoactual(row.id)}
-                                             style={ {color: "#DBA800", borderColor: "#DBA800" }}>
+                                    <Button variant='outlined' color="inherit"
+                                            onClick={() => obtenerJuegoactual(row.id)}
+                                            style={{color: "#DBA800", borderColor: "#DBA800"}}>
                                         UPDATE
                                     </Button>
                                 </TableCell>
