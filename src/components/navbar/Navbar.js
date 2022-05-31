@@ -9,7 +9,7 @@ export default function Navbar(){
     return(
 
 
-        <div className="sum">
+        <div /*style={{position: "relative", top:0, left: 0, zIndex:5}}*/  className="sum">
 
             <div className="logo">
                 Menu
