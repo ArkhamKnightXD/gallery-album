@@ -21,7 +21,7 @@ export default function WeatherApp() {
 
                     setWeather(result);
                     setQuery('');
-                    console.log(weather);
+
                 });
         }
     }

@@ -14,7 +14,17 @@ function SimpleDialog(props) {
     const {onClose, selectedValue, open} = props
 
 
-    const menu = ['helado', 'pizza', 'hot dog', 'cheese burger', 'bizcocho', 'nachos', 'palomitas','tacos','brownies'];
+    const menu = [
+        {id: 0, name:'helado'},
+        {id:1, name: 'pizza'},
+        {id:2, name:'hot dog'},
+        {id:3, name:'cheese burger'},
+        {id:4, name:'bizcocho'},
+        {id:5, name:'nachos'},
+        {id:6, name:'palomitas'},
+        {id:7, name:'tacos'},
+        {id:8, name: 'brownies'}
+    ];
 
     //esta funcion muestra un mensaje de lo que elegiste
     const handleClose = () => {
@@ -41,13 +51,13 @@ function SimpleDialog(props) {
                 <List>
 
                     {menu.map(menu =>(
-                        <ListItem button onClick={() => handleListItemClick(menu)}>
+                        <ListItem button key={menu.id} onClick={() => handleListItemClick(menu.name)}>
                             <ListItemAvatar>
                                 <Avatar>
                                     <FastFoodIcon/>
                                 </Avatar>
                             </ListItemAvatar>
-                            <ListItemText style={{color: "#000"}} primary={menu}/>
+                            <ListItemText style={{color: "#000"}} primary={menu.name}/>
                         </ListItem>
                     ))}
 

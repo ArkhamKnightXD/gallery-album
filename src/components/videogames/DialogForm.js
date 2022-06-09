@@ -8,10 +8,10 @@ import './games.css';
 export default function DialogForm({setVideojuegos, videojuegoActual, handleClickOpen, isOpen, setIsOpen}) {
 
     //estados
-    const [name, setName] = useState("");
-    const [genre, setGenre] = useState("");
-    const [developer, setDeveloper] = useState("");
-    const [gameModes, setGameModes] = useState("");
+        const [name, setName] = useState("");
+        const [genre, setGenre] = useState("Fighting");
+        const [developer, setDeveloper] = useState("");
+        const [gameModes, setGameModes] = useState("Single-player");
 
 
     const handleNameChange = event => {

@@ -20,10 +20,16 @@ export default function  CardAnimation(){
                         <p initial={{opacity: 0}}
                            animate={{opacity: 1}}
                            transition={{duration: 1}}
-                           exit={{opacity: 0}} className="expand">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.<br/>
-                            Praesent luctus eleifend finibus. Pellentesque tincidunt.</p>
-                        <p className="expand2">turpis nunc eget lorem dolor sed viverra ipsum nunc aliquet</p>
+                           exit={{opacity: 0}} className="expand"><em>Song Lyrics Deja Vu by Olivia Rodrigo</em><br/>
+                            Car rides to Malibu
+                            Strawberry ice cream, one spoon for two<br/>
+                            And tradin' jackets<br/>
+                            Laughin’ 'bout how small it looks on you<br/>
+                            (Ha, ha, ha, ha, ha, ha, ha, ha, ha, ha, ha, ha).</p>
+                        <p className="expand2">
+                            Watching reruns of Glee<br/>
+                            Being annoying<br/>
+                            Singing in harmony...</p>
                         <Button className="button01" style={{color: '#000'}}>hide</Button>
                     </motion.div>
 

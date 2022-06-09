@@ -17,48 +17,48 @@ let navigate = useNavigate();
         {
             questionText: 'What is the capital of France?',
             answerOptions: [
-                { answerText: 'New York', isCorrect: false },
-                { answerText: 'London', isCorrect: false },
-                { answerText: 'Paris', isCorrect: true },
-                { answerText: 'Dublin', isCorrect: false },
+                {id: 1, answerText: 'New York', isCorrect: false },
+                {id: 2, answerText: 'London', isCorrect: false },
+                {id: 3, answerText: 'Paris', isCorrect: true },
+                {id: 4, answerText: 'Dublin', isCorrect: false },
             ],
 
         },
         {
             questionText: 'Who is CEO of Tesla?',
             answerOptions: [
-                { answerText: 'Jeff Bezos', isCorrect: false },
-                { answerText: 'Elon Musk', isCorrect: true },
-                { answerText: 'Bill Gates', isCorrect: false },
-                { answerText: 'Tony Stark', isCorrect: false },
+                {id: 5, answerText: 'Jeff Bezos', isCorrect: false },
+                {id: 6, answerText: 'Elon Musk', isCorrect: true },
+                {id: 7, answerText: 'Bill Gates', isCorrect: false },
+                {id: 8, answerText: 'Tony Stark', isCorrect: false },
             ],
         },
         {
             questionText: 'The Iphone was created by which company?',
             answerOptions: [
-                { answerText: 'Apple', isCorrect: true },
-                { answerText: 'Intel', isCorrect: false },
-                { answerText: 'Amazon', isCorrect: false },
-                { answerText: 'Microsoft', isCorrect: false },
+                {id: 9, answerText: 'Apple', isCorrect: true },
+                {id: 10, answerText: 'Intel', isCorrect: false },
+                {id: 11, answerText: 'Amazon', isCorrect: false },
+                {id: 12, answerText: 'Microsoft', isCorrect: false },
             ],
         },
         {
             questionText: 'How many Harry Potter books are there?',
             answerOptions: [
-                { answerText: '1', isCorrect: false },
-                { answerText: '4', isCorrect: false },
-                { answerText: '6', isCorrect: false },
-                { answerText: '7', isCorrect: true },
+                {id: 13, answerText: '1', isCorrect: false },
+                {id: 14, answerText: '4', isCorrect: false },
+                {id: 15, answerText: '6', isCorrect: false },
+                {id: 16, answerText: '7', isCorrect: true },
             ],
         },
 
         {
             questionText: 'Which country is the smallest in the world?',
             answerOptions: [
-                { answerText: 'Bahamas', isCorrect: false },
-                { answerText: 'Puerto Rico', isCorrect: false },
-                { answerText: 'Vaticano City', isCorrect: true },
-                { answerText: 'Monaco', isCorrect: false },
+                {id: 17, answerText: 'Bahamas', isCorrect: false },
+                {id: 18, answerText: 'Puerto Rico', isCorrect: false },
+                {id: 19, answerText: 'Vaticano City', isCorrect: true },
+                {id: 20, answerText: 'Monaco', isCorrect: false },
             ],
         },
     ]
@@ -116,7 +116,7 @@ let navigate = useNavigate();
                     </div>
                     <div className="answer-section">
                         {questions[currentQuestion].answerOptions.map((answerOption) => (
-                            <button className="button-quiz" onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                            <button key={answerOption.id} className="button-quiz" onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
                         ))}
                     </div>
                 </>
