@@ -55,6 +55,10 @@ export default function Navbar(){
                         <Link to="/Main">Movies</Link>
                     </li>
 
+                    <li>
+                        <Link to="/Form">Form</Link>
+                    </li>
+
                 </ul>
             </nav>
 

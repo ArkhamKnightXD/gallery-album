@@ -14,6 +14,7 @@ import WeatherApp from "./components/weather/WeatherApp";
 import QuizApp from "./components/quiz/QuizApp";
 import Navbar from "./components/navbar/Navbar";
 import Main from "./components/filtering/Main";
+import Form from "./components/register/Form";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                     <Route path="/weatherapp" element={<WeatherApp/>}/>
                     <Route path="/dialogcomponent" element={<DialogComponent/>}/>
                     <Route path="/main" element={<Main/>}/>
+                    <Route path="/form" element={<Form/>}/>
 
                 </Routes>
 
