@@ -9,7 +9,7 @@ export default function Navbar(){
     return(
 
 
-        <div /*style={{position: "relative", top:0, left: 0, zIndex:5}}*/  className="sum">
+        <div style={{position: "fixed", top:0, left: 0, zIndex:5, width: "100%", overflow: "hidden"}}  className="sum">
 
             <div className="logo">
                 Menu
@@ -49,6 +49,10 @@ export default function Navbar(){
 
                     <li>
                         <Link to="/WeatherApp">Weather</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/Main">Movies</Link>
                     </li>
 
                 </ul>

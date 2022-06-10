@@ -25,7 +25,7 @@ function Gallery (){
 
         <div style={{background: 'none'}}>
             <CssBaseline/>
-            <AppBar position="relative">
+            <AppBar style={{marginTop: 72}} position="relative">
                 <Toolbar>
                     <PhotoCamera className={classes.icon}/>
                     <Typography variant="h6">

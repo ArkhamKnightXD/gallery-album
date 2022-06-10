@@ -43,7 +43,7 @@ export default function WeatherApp() {
     return (
 
 
-        <div id="app01" className={
+        <div style={{marginTop: 76}} id="app01" className={
 
             //En primer lugar se verifica que haya datos para elegir el fondo por defecto.
             // En la segunda verificacion, se verifica que la temperatura sea mayor a 16 grados y si es mayor elige la imagen de fondo.

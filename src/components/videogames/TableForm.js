@@ -81,7 +81,7 @@ function TableForm() {
 
     return (
 
-        <>
+        <div style={{marginTop: 100}}>
 
             <DialogForm handleClickOpen={handleClickOpen} videojuegoActual={videojuegoActual}
                         setVideojuegos={setVideojuegos} isOpen={isOpen} setIsOpen={setIsOpen}/>
@@ -149,7 +149,7 @@ function TableForm() {
             </TableContainer>
 
 
-        </>
+        </div>
 
     );
 }

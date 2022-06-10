@@ -13,6 +13,7 @@ import Calculadora from "./components/calculator/Calculadora";
 import WeatherApp from "./components/weather/WeatherApp";
 import QuizApp from "./components/quiz/QuizApp";
 import Navbar from "./components/navbar/Navbar";
+import Main from "./components/filtering/Main";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                     <Route path="/tableform" element={<TableForm/>}/>
                     <Route path="/weatherapp" element={<WeatherApp/>}/>
                     <Route path="/dialogcomponent" element={<DialogComponent/>}/>
+                    <Route path="/main" element={<Main/>}/>
 
                 </Routes>
 

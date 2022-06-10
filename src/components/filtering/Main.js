@@ -1,44 +1,63 @@
 import {useEffect, useState} from "react";
 import Movies from './Movie';
 import Filter from './Filter';
+import {motion, AnimatePresence} from "framer-motion";
+import './movie.css';
 
-export default function Main(){
+export default function Main() {
 
-const fetchPopular = async ()=> {
+    const apikey = '31ea4d51557c07ce32e050afb1c5494a';
 
     const [popular, setPopular] = useState([]);
+    const [filtered, setFiltered] = useState([]);
+    const [activeGenre, setActiveGenre] = useState(0);
 
     useEffect(() => {
-       fetchPopular();
+            fetchPopular();
 
-    },
+        },
         []);
-    
 
-    const data = await fetch('api-link');
-    const movies = await data.json();
+    const fetchPopular = async () => {
 
-    setPopular(movies.results);
-}
+        const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`);
+        const movies = await data.json();
 
+        console.log("DAta:", movies);
 
-    return(
-
-
-      <>
-     <div className={popularMovies}>
-     <Filter/>
-     {popular.map(movie=> {
-        return <Movies key={movie.id} movie={movie}/>;
-      })}
+        setPopular(movies.results);
+        setFiltered(movies.results);
+    }
 
 
-</div>
-      </>
+    return (
+
+
+        <>
+
+            <br/><br/>
+            <motion.div layout className="popularMovies">
+
+                <Filter popular={popular}
+                        setFiltered={setFiltered}
+                        activeGenre={activeGenre}
+                        setActiveGenre={setActiveGenre}/>
+
+                <br/>
+
+                <AnimatePresence>
+
+                    {filtered.map((movie) => {
+                        return <Movies key={movie.id} movie={movie}/>;
+                    })}
+
+                </AnimatePresence>
+
+            </motion.div>
+        </>
 
     );
 }
 
 
 
-// Awesome Filtering Animation with React Tutorial min: 19min
