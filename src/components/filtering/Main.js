@@ -1,8 +1,12 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Movies from './Movie';
 import Filter from './Filter';
 import {motion, AnimatePresence} from "framer-motion";
 import './movie.css';
+
+import '../../spinner.css';
+import BeatLoader from "react-spinners/BeatLoader";
+import useLoading from "../useLoading";
 
 export default function Main() {
 
@@ -23,20 +27,31 @@ export default function Main() {
         const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`);
         const movies = await data.json();
 
-        console.log("DAta:", movies);
+        console.log("Data:", movies);
 
         setPopular(movies.results);
         setFiltered(movies.results);
     }
 
 
+    /*spinner*/
+
+    const loading = useLoading(1000);
+
     return (
 
 
         <>
 
-            <br/><br/>
+            {
+                loading ?
+                    <BeatLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={20}/>
+
+                    :
+
+
             <motion.div layout className="popularMovies">
+
 
                 <Filter popular={popular}
                         setFiltered={setFiltered}
@@ -54,6 +69,8 @@ export default function Main() {
                 </AnimatePresence>
 
             </motion.div>
+            }
+
         </>
 
     );

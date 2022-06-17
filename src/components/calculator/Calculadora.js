@@ -1,5 +1,12 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import "./calculator.css";
+
+import '../../spinner.css';
+
+import RotateLoader from "react-spinners/RotateLoader";
+import useLoading from "../useLoading";
+
+
 
 
 export default function Calculadora() {
@@ -59,35 +66,43 @@ export default function Calculadora() {
 
 
 
+    /*spinner*/
 
+    const loading = useLoading(1000);
 
 
 
     return (
         <div className="App">
 
-            <div className="calculator">
-                <div className="display">
-                    {result ? <span>({result})</span> : ""} &nbsp; {calc || "0"}
-                </div>
+            {
+                loading ?
+                    <RotateLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={20}/>
+                    :
 
-                <div className="operators">
-                    <button onClick={() => updateCalc('/')}>/</button>
-                    <button onClick={() => updateCalc('*')}>*</button>
-                    <button onClick={() => updateCalc('+')}>+</button>
-                    <button onClick={() => updateCalc('-')}>-</button>
+                    <div className="calculator">
+                        <div className="display">
+                            {result ? <span>({result})</span> : ""} &nbsp; {calc || "0"}
+                        </div>
 
-                    <button onClick={deleteLast}>DEL</button>
-                </div>
+                        <div className="operators">
+                            <button onClick={() => updateCalc('/')}>/</button>
+                            <button onClick={() => updateCalc('*')}>*</button>
+                            <button onClick={() => updateCalc('+')}>+</button>
+                            <button onClick={() => updateCalc('-')}>-</button>
 
-                <div className="digits">
-                    {createDigits()}
-                    <button onClick={() => updateCalc('0')}>0</button>
-                    <button onClick={() => updateCalc('.')}>.</button>
-                    <button onClick={calculate}>=</button>
-                </div>
-            </div>
+                            <button onClick={deleteLast}>DEL</button>
+                        </div>
 
+                        <div className="digits">
+                            {createDigits()}
+                            <button onClick={() => updateCalc('0')}>0</button>
+                            <button onClick={() => updateCalc('.')}>.</button>
+                            <button onClick={calculate}>=</button>
+                        </div>
+                    </div>
+
+            }
 
         </div>
     );

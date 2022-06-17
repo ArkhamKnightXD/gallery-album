@@ -1,7 +1,7 @@
 /*framer-motion*/
-html{
-    scrollbar-width:none;
-}
+/*html{*/
+/*    scrollbar-width:none;*/
+/*}*/
 
 .item{
     min-height:40rem;

@@ -15,19 +15,18 @@ import QuizApp from "./components/quiz/QuizApp";
 import Navbar from "./components/navbar/Navbar";
 import Main from "./components/filtering/Main";
 import Form from "./components/register/Form";
+import Hooks from "./components/Hooks";
 
 
 function App() {
-
 
 
     return (
 
 //Lo ideal es no tener mucho codigo en app. Lo que se debe de hacer en app es llamar los componentes aqui
 
+        <div>
 
-
-        <>
 
             <Router>
 
@@ -52,15 +51,7 @@ function App() {
 
             </Router>
 
-
-
-
-
-
-
-
-
-        </>
+        </div>
 
 
 

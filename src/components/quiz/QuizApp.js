@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import './quiz.css';
 import {useNavigate} from "react-router-dom";
 
-
+import '../../spinner.css';
+import { useEffect } from "react";
+import PuffLoader from "react-spinners/PuffLoader";
+import useLoading from "../useLoading";
 
 
 export default function  QuizApp() {
@@ -94,38 +97,61 @@ let navigate = useNavigate();
 
     }
 
+
+
+
+
+    /*spinner*/
+
+    const loading = useLoading(1000);
+
+
+
+
     return(
-        <div className="app-quiz">
 
-            {/*Aqui pregunta si showscore es true y si es true muestra la puntuacion y si no, muestra las preguntas
+        <>
+
+            {
+                loading ?
+                    <PuffLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={70}/>
+                    :
+
+
+                    <div className="app-quiz">
+
+
+                        {/*Aqui pregunta si showscore es true y si es true muestra la puntuacion y si no, muestra las preguntas
             (esto es basicamente un if).*/}
-            {showScore ? (
-                <div className="score-section">You scored {score} out of {questions.length}
-                <button className="retry-btn" onClick={resetStateClick}>Retry</button></div>
-            ) : (
-                <>
+                        {showScore ? (
+                            <div className="score-section">You scored {score} out of {questions.length}
+                                <button className="retry-btn" onClick={resetStateClick}>Retry</button>
+                            </div>
+                        ) : (
+                            <>
 
-                    <div className="question-section">
-                        <div className="question-count">
-                            <span>Question {currentQuestion + 1}</span>/{questions.length}
-                        </div>
-                        <div className="question-text">{questions[currentQuestion].questionText}</div>
-                        <div className="lastscore">
-                            <p>Your Last Score: {recordedScore}</p>
-                        </div>
+                                <div className="question-section">
+                                    <div className="question-count">
+                                        <span>Question {currentQuestion + 1}</span>/{questions.length}
+                                    </div>
+                                    <div className="question-text">{questions[currentQuestion].questionText}</div>
+                                    <div className="lastscore">
+                                        <p>Your Last Score: {recordedScore}</p>
+                                    </div>
+                                </div>
+                                <div className="answer-section">
+                                    {questions[currentQuestion].answerOptions.map((answerOption) => (
+                                        <button key={answerOption.id} className="button-quiz"
+                                                onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+                                    ))}
+                                </div>
+                            </>
+                        )}
+
                     </div>
-                    <div className="answer-section">
-                        {questions[currentQuestion].answerOptions.map((answerOption) => (
-                            <button key={answerOption.id} className="button-quiz" onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-                        ))}
-                    </div>
+
+            }
+
                 </>
-            )}
-
-
-
-
-
-        </div>
     );
 }

@@ -1,7 +1,12 @@
 import FormInput from "./FormInput";
-import {useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import './form.css';
 
+
+
+import '../../spinner.css';
+import BarLoader from "react-spinners/BarLoader";
+import useLoading from "../useLoading";
 
 export default function Form(){
 
@@ -81,18 +86,35 @@ export default function Form(){
     }
 
     console.log(values)
+
+
+
+
+/*spinner*/
+    const loading = useLoading(1000);
+
+
+
+
     return(
 
         <div className="form-app">
 
+            {
+                loading ?
+                    <BarLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={40}/>
+                    :
 
-            <form onSubmit={handleSubmit}>
-                <h1 className="h1-form">Register</h1>
-                {inputs.map((input) => (
-                <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
-                ))}
-                <button className="btn-form">Submit</button>
-            </form>
+
+                    <form onSubmit={handleSubmit}>
+                        <h1 className="h1-form">Register</h1>
+                        {inputs.map((input) => (
+                            <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
+                        ))}
+                        <button className="btn-form">Submit</button>
+                    </form>
+
+            }
 
         </div>
 
