@@ -38,7 +38,6 @@ export default function Tictac() {
             if (idx === boxIdx) {
                 return xPlaying === true ? "X" : "O";
             } else {
-                console.log('value:', value)
                 return value;
             }
         })
