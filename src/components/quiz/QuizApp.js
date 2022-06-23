@@ -60,7 +60,7 @@ let navigate = useNavigate();
             answerOptions: [
                 {id: 17, answerText: 'Bahamas', isCorrect: false },
                 {id: 18, answerText: 'Puerto Rico', isCorrect: false },
-                {id: 19, answerText: 'Vaticano City', isCorrect: true },
+                {id: 19, answerText: 'Vatican City', isCorrect: true },
                 {id: 20, answerText: 'Monaco', isCorrect: false },
             ],
         },

@@ -15,6 +15,7 @@ import Navbar from "./components/navbar/Navbar";
 import Main from "./components/filtering/Main";
 import Form from "./components/register/Form";
 import Tictac from "./components/tic-tac-toe/Tictac";
+import RockPaperScissors from "./components/rock-paper-scissors/RockPaperScissors";
 
 
 function App() {
@@ -27,31 +28,36 @@ function App() {
         <div>
 
 
-            <Router>
+            {/*<Router>*/}
 
-                <Navbar/>
+            {/*    <Navbar/>*/}
 
-                <Routes>
-
-
-                    <Route path="/" element={<Gallery/>}/>
-                    <Route path="/quizapp" element={<QuizApp/>}/>
-                    <Route path="/framermotion" element={<FramerMotion/>}/>
-                    <Route path="/cardanimation" element={<CardAnimation/>}/>
-                    <Route path="/calculadora" element={<Calculadora/>}/>
-                    <Route path="/tableform" element={<TableForm/>}/>
-                    <Route path="/weatherapp" element={<WeatherApp/>}/>
-                    <Route path="/dialogcomponent" element={<DialogComponent/>}/>
-                    <Route path="/main" element={<Main/>}/>
-                    <Route path="/form" element={<Form/>}/>
-                    <Route path="/tictac" element={<Tictac/>}/>
-
-                </Routes>
+            {/*    <Routes>*/}
 
 
-            </Router>
+            {/*        <Route path="/" element={<Gallery/>}/>*/}
+            {/*        <Route path="/quizapp" element={<QuizApp/>}/>*/}
+            {/*        <Route path="/framermotion" element={<FramerMotion/>}/>*/}
+            {/*        <Route path="/cardanimation" element={<CardAnimation/>}/>*/}
+            {/*        <Route path="/calculadora" element={<Calculadora/>}/>*/}
+            {/*        <Route path="/tableform" element={<TableForm/>}/>*/}
+            {/*        <Route path="/weatherapp" element={<WeatherApp/>}/>*/}
+            {/*        <Route path="/dialogcomponent" element={<DialogComponent/>}/>*/}
+            {/*        <Route path="/main" element={<Main/>}/>*/}
+            {/*        <Route path="/form" element={<Form/>}/>*/}
+            {/*        <Route path="/tictac" element={<Tictac/>}/>*/}
+
+            {/*    </Routes>*/}
 
 
+            {/*</Router>*/}
+
+
+            <RockPaperScissors/>
+
+
+
+            {/*Rock Paper Scissors in React vs JavaScript (finished video)*/}
         </div>
 
 
