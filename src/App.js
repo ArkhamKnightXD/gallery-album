@@ -6,7 +6,6 @@ import React from 'react';
 import DialogComponent from "./components/forms/DialogComponent";
 import Gallery from "./components/Gallery";
 import TableForm from "./components/videogames/TableForm";
-
 import FramerMotion from "./components/slider/FramerMotion";
 import CardAnimation from "./components/card-animation/CardAnimation";
 import Calculadora from "./components/calculator/Calculadora";
@@ -15,7 +14,7 @@ import QuizApp from "./components/quiz/QuizApp";
 import Navbar from "./components/navbar/Navbar";
 import Main from "./components/filtering/Main";
 import Form from "./components/register/Form";
-import Hooks from "./components/Hooks";
+import Tictac from "./components/tic-tac-toe/Tictac";
 
 
 function App() {
@@ -45,21 +44,19 @@ function App() {
                     <Route path="/dialogcomponent" element={<DialogComponent/>}/>
                     <Route path="/main" element={<Main/>}/>
                     <Route path="/form" element={<Form/>}/>
+                    <Route path="/tictac" element={<Tictac/>}/>
 
                 </Routes>
 
 
             </Router>
 
-        </div>
 
+        </div>
 
 
     );
 }
-
-
-
 
 
 export default App;

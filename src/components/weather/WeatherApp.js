@@ -55,13 +55,14 @@ export default function WeatherApp() {
     return (
 
 
-        <div style={{marginTop: 76}} >
+        <div  style={{marginTop: 76}} >
 
 
             {
                 loading ?
                     <ClipLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={50}/>
                     :
+
 
 
                     <main id="app01" className={

@@ -59,6 +59,10 @@ export default function Navbar(){
                         <Link to="/Form">Form</Link>
                     </li>
 
+                    <li>
+                        <Link to="/Tictac">Tic-Tac-Toe</Link>
+                    </li>
+
                 </ul>
             </nav>
 
