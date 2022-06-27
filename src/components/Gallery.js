@@ -10,7 +10,7 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
-import {PhotoCamera} from "@material-ui/icons";
+import {PhotoCamera, Restaurant} from "@material-ui/icons";
 import useStyles from "../style";
 
 
@@ -24,7 +24,45 @@ function Gallery() {
 
     const classes = useStyles();
 
-    const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    const cards = [
+        {productName: 'Tomatoes',
+        productPrice: 15,
+        productImage: './assets-grocery/tomatoes.jpg'},
+
+        {productName: 'Lettuce',
+            productPrice: 50,
+            productImage: './assets-grocery/lettuce.jpg'},
+
+        {productName: 'Eggs',
+            productPrice: 50,
+            productImage: './assets-grocery/eggs.jpg'},
+
+        {productName: 'Coca-cola',
+            productPrice: 60,
+            productImage: './assets-grocery/cocacola.jpg'},
+
+        {productName: 'Rice',
+            productPrice: 200,
+            productImage: './assets-grocery/arroz.jpg'},
+
+        {productName: 'Oats',
+            productPrice: 30,
+            productImage: './assets-grocery/avena.jpg'},
+
+        {productName: 'Beans',
+            productPrice: 30,
+            productImage: './assets-grocery/beans.jpg'},
+
+        {productName: 'Carrots',
+            productPrice: 25,
+            productImage: './assets-grocery/carrot.jpg'},
+
+        {productName: 'Peppers',
+            productPrice: 20,
+            productImage: './assets-grocery/ajis.jpg'},
+     ]
+
+
 
 
     const loading = useLoading(1000);
@@ -37,11 +75,11 @@ function Gallery() {
 
                 : <div style={{background: 'none'}}>
                     <CssBaseline/>
-                    <AppBar style={{marginTop: 72}} position="relative">
+                    <AppBar style={{marginTop: 72, backgroundColor: '#B12E0E'}} position="relative">
                         <Toolbar>
-                            <PhotoCamera className={classes.icon}/>
+                            <Restaurant className={classes.icon}/>
                             <Typography variant="h6">
-                                Photo Album
+                                Grocery Store
                             </Typography>
                         </Toolbar>
                     </AppBar>
@@ -49,13 +87,12 @@ function Gallery() {
                         <div className={classes.container}>
                             <Container maxWidth="sm">
                                 <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-                                    Photo Album
+                                    Grocery Store
                                 </Typography>
                                 <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                                    Hello everyone This is a photo album and i'm trying to make this sentence as
-                                    long as
-                                    possible so we
-                                    can see how does it look like on the screen
+                                    Explore a wide range of food product options,
+                                    carefully selected so you can find the best quality
+                                    available at the lowest cost.
                                 </Typography>
                             </Container>
                         </div>
@@ -64,15 +101,15 @@ function Gallery() {
                             <Grid container spacing={2} justifyContent="center">
 
                                 <Grid item>
-                                    <Button variant="contained" color="primary">
-                                        See my photos
+                                    <Button variant="contained" style={{backgroundColor: 'red', color: '#fff'}}>
+                                        See all products
                                     </Button>
                                 </Grid>
 
 
                                 <Grid item>
-                                    <Button variant="outlined" color="primary">
-                                        Secondary action
+                                    <Button variant="outlined" style={{borderColor: '#B12E0E', color: '#B12E0E'}}>
+                                        Check out today's discounts!
                                     </Button>
                                 </Grid>
 
@@ -87,22 +124,21 @@ function Gallery() {
                                     <Grid item key={card} xs={12} sm={6} md={4}>
                                         <Card className={classes.card}>
                                             <CardMedia className={classes.cardMedia}
-                                                       image="https://source.unsplash.com/random"
+                                                       image={card.productImage}
                                                        title="Image title"
 
                                             />
                                             <CardContent className={classes.cardContent}>
                                                 <Typography gutterBottom variant="h5">
-                                                    Heading
+                                                    {card.productName}
                                                 </Typography>
                                                 <Typography>
-                                                    This is a media card. You can use this section to describe the
-                                                    content.
+                                                    {card.productPrice}
                                                 </Typography>
                                             </CardContent>
                                             <CardActions>
-                                                <Button size="small" color="primary">View</Button>
-                                                <Button size="small" color="primary">Edit</Button>
+                                                <Button size="small" style={{color: 'red'}}>View</Button>
+                                                <Button size="small" style={{color: 'red'}}>Buy</Button>
                                             </CardActions>
                                         </Card>
                                     </Grid>

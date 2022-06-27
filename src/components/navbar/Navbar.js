@@ -19,7 +19,7 @@ export default function Navbar(){
                 <ul className="ul">
 
                     <li>
-                        <Link to="/">Gallery</Link>
+                        <Link to="/">Grocery</Link>
                     </li>
 
                     <li>
