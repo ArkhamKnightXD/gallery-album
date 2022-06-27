@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import "./calculator.css";
-
 import '../../spinner.css';
-
 import RotateLoader from "react-spinners/RotateLoader";
 import useLoading from "../useLoading";
 

@@ -6,6 +6,7 @@ import DeleteButton from "./DeleteButton";
 import '../../spinner.css';
 import PropagateLoader from "react-spinners/PropagateLoader";
 import useLoading from "../useLoading";
+import Box from "@material-ui/core/Box";
 
 export default function Tictac() {
 
@@ -26,9 +27,6 @@ export default function Tictac() {
     const [xPlaying, setXPlaying] = useState(true);
     const [scores, setScores] = useState({xScore: 0, oScore: 0})
     const [gameOver, setGameOver] = useState(false)
-
-
-
 
 
     //esta funcion se encarga de llenar los cuadros con X o con O dependiendo el turno del jugador. tambien se encarga
@@ -111,12 +109,23 @@ export default function Tictac() {
 
                     <div className="app-tic">
 
+                        <Box
+                            sx={{
+                                width: 340,
+                                height: 690,
+                                backgroundColor: '#D1CFD5',
+                                paddingTop: '1px',
+                                borderRadius: '20px'
+                            }}
+                        >
 
-                        <ScoreBoard scores={scores} xPlaying={xPlaying}/>
-                        <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick}/>
-                        <DeleteButton resetBoard={resetBoard}/>
-                        <button className="new-btn" onClick={resetScore}>New Game</button>
 
+                            <ScoreBoard scores={scores} xPlaying={xPlaying}/>
+                            <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick}/>
+                            <DeleteButton resetBoard={resetBoard}/>
+                            <button className="new-btn" onClick={resetScore}>New Game</button>
+
+                        </Box>
 
                     </div>
 

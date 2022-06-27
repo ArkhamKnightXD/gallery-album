@@ -3,9 +3,7 @@ import {Button} from "@material-ui/core";
 import React, {useState} from "react";
 import '../../App.css';
 import './card.css';
-
 import '../../spinner.css';
-import { useEffect } from "react";
 import SquareLoader from "react-spinners/SquareLoader";
 import useLoading from "../useLoading";
 

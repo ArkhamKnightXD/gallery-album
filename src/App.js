@@ -1,8 +1,5 @@
-// import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-//import './index.css';
 import React from 'react';
-
 import DialogComponent from "./components/forms/DialogComponent";
 import Gallery from "./components/Gallery";
 import TableForm from "./components/videogames/TableForm";
@@ -27,39 +24,31 @@ function App() {
 
         <div>
 
+            <Router>
 
-            {/*<Router>*/}
+                <Navbar/>
 
-            {/*    <Navbar/>*/}
-
-            {/*    <Routes>*/}
-
-
-            {/*        <Route path="/" element={<Gallery/>}/>*/}
-            {/*        <Route path="/quizapp" element={<QuizApp/>}/>*/}
-            {/*        <Route path="/framermotion" element={<FramerMotion/>}/>*/}
-            {/*        <Route path="/cardanimation" element={<CardAnimation/>}/>*/}
-            {/*        <Route path="/calculadora" element={<Calculadora/>}/>*/}
-            {/*        <Route path="/tableform" element={<TableForm/>}/>*/}
-            {/*        <Route path="/weatherapp" element={<WeatherApp/>}/>*/}
-            {/*        <Route path="/dialogcomponent" element={<DialogComponent/>}/>*/}
-            {/*        <Route path="/main" element={<Main/>}/>*/}
-            {/*        <Route path="/form" element={<Form/>}/>*/}
-            {/*        <Route path="/tictac" element={<Tictac/>}/>*/}
-
-            {/*    </Routes>*/}
+                <Routes>
 
 
-            {/*</Router>*/}
+                    <Route path="/" element={<Gallery/>}/>
+                    <Route path="/quizapp" element={<QuizApp/>}/>
+                    <Route path="/framermotion" element={<FramerMotion/>}/>
+                    <Route path="/cardanimation" element={<CardAnimation/>}/>
+                    <Route path="/calculadora" element={<Calculadora/>}/>
+                    <Route path="/tableform" element={<TableForm/>}/>
+                    <Route path="/weatherapp" element={<WeatherApp/>}/>
+                    <Route path="/dialogcomponent" element={<DialogComponent/>}/>
+                    <Route path="/main" element={<Main/>}/>
+                    <Route path="/form" element={<Form/>}/>
+                    <Route path="/tictac" element={<Tictac/>}/>
+                    <Route path="/rockpaperscissors" element={<RockPaperScissors/>}/>
 
+                </Routes>
 
-            <RockPaperScissors/>
+            </Router>
 
-
-
-            {/*Rock Paper Scissors in React vs JavaScript (finished video)*/}
         </div>
-
 
     );
 }

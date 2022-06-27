@@ -18,12 +18,12 @@ function SimpleDialog(props) {
         {id: 0, name:'helado'},
         {id:1, name: 'pizza'},
         {id:2, name:'hot dog'},
-        {id:3, name:'cheese burger'},
+        {id:3, name:'cupcake'},
         {id:4, name:'bizcocho'},
         {id:5, name:'nachos'},
         {id:6, name:'palomitas'},
         {id:7, name:'tacos'},
-        {id:8, name: 'brownies'}
+        {id:8, name: 'brownie'}
     ];
 
     //esta funcion muestra un mensaje de lo que elegiste

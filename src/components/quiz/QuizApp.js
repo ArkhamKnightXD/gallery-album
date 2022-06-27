@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './quiz.css';
 import {useNavigate} from "react-router-dom";
-
 import '../../spinner.css';
-import { useEffect } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
 import useLoading from "../useLoading";
 

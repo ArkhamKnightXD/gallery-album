@@ -3,7 +3,6 @@ import Movies from './Movie';
 import Filter from './Filter';
 import {motion, AnimatePresence} from "framer-motion";
 import './movie.css';
-
 import '../../spinner.css';
 import BeatLoader from "react-spinners/BeatLoader";
 import useLoading from "../useLoading";

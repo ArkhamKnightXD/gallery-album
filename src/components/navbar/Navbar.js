@@ -11,9 +11,9 @@ export default function Navbar(){
 
         <div style={{position: "fixed", top:0, left: 0, zIndex:5, width: "100%", overflow: "hidden"}}  className="sum">
 
-            <div className="logo">
-                Menu
-            </div>
+            {/*<div className="logo">*/}
+            {/*    Menu*/}
+            {/*</div>*/}
 
             <nav className="item02">
                 <ul className="ul">
@@ -62,6 +62,35 @@ export default function Navbar(){
                     <li>
                         <Link to="/Tictac">Tic-Tac-Toe</Link>
                     </li>
+
+                    <li>
+                        <Link to="/RockPaperScissors">Roc-Paper-Sci</Link>
+                    </li>
+
+
+
+
+                      {/*<li>*/}
+                      {/*   Others ˅*/}
+                      {/*        <ul className="drop">*/}
+
+                      {/*            <li>*/}
+                      {/*                <Link to="/QuizApp">QuizApp</Link>*/}
+                      {/*            </li>*/}
+
+
+                      {/*            <li>*/}
+                      {/*                <Link to="/Tictac">Tic-Tac-Toe</Link>*/}
+                      {/*            </li>*/}
+
+                      {/*            <li>*/}
+                      {/*                <Link to="/RockPaperScissors">Roc-Paper-Sci</Link>*/}
+                      {/*            </li>*/}
+
+
+                      {/*        </ul>*/}
+                      {/*</li>*/}
+
 
                 </ul>
             </nav>
