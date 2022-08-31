@@ -10,15 +10,11 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
-import {PhotoCamera, Restaurant} from "@material-ui/icons";
+import {Restaurant} from "@material-ui/icons";
 import useStyles from "../style";
-
-
 import '../spinner.css';
-import React, {useState, useEffect} from "react";
 import HashLoader from "react-spinners/HashLoader";
 import useLoading from "./useLoading";
-
 
 function Gallery() {
 

@@ -9,12 +9,9 @@ import TableRow from "@material-ui/core/TableRow";
 import {Button} from "@material-ui/core";
 import axios from "axios";
 import DialogForm from "./DialogForm";
-
-
 import '../../spinner.css';
 import BounceLoader from "react-spinners/BounceLoader";
 import useLoading from "../useLoading";
-
 
 //Esta es una forma de dar estilos en react. Esto indica que la tabla va a tener un ancho minimo de 650px.
 const useStyles = makeStyles({

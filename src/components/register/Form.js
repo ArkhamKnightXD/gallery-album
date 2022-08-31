@@ -1,11 +1,11 @@
 import FormInput from "./FormInput";
-import React, {useRef, useState} from "react";
+import { useState} from "react";
 import './form.css';
 import '../../spinner.css';
 import BarLoader from "react-spinners/BarLoader";
 import useLoading from "../useLoading";
-export default function Form(){
 
+export default function Form(){
 
     const [values, setValues] = useState({
         username: "",

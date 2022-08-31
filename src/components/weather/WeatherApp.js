@@ -1,13 +1,8 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './weather.css';
-
-
-
 import '../../spinner.css';
-
 import ClipLoader from "react-spinners/ClipLoader";
 import useLoading from "../useLoading";
-
 
 const api = {
     key: "c204daef7d9d00d4ee62ca961cf4476b",
@@ -16,6 +11,7 @@ const api = {
 
 export default function WeatherApp() {
 
+    const loading = useLoading(1000);
     const [query, setQuery] = useState('');
     const [weather, setWeather] = useState({});
 
@@ -46,57 +42,47 @@ export default function WeatherApp() {
         return `${day} ${date} ${month} ${year}`
     }
 
-
-
-/*spinner*/
-
-    const loading = useLoading(1000);
-
     return (
 
 
-        <div  style={{marginTop: 76}} >
+        <div style={{marginTop: 76}}>
 
 
-            {
-                loading ?
-                    <ClipLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={50}/>
-                    :
+            {loading ? <ClipLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={50}/>
 
+                :
+                <main id="app01" className={
 
+                    //En primer lugar se verifica que haya datos para elegir el fondo por defecto.
+                    // En la segunda verificacion, se verifica que la temperatura sea mayor a 16 grados y si es mayor elige la imagen de fondo.
+                    (typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
 
-                    <main id="app01" className={
+                    <div className="search-box">
+                        <input type="text" className="search-bar" placeholder="Search..."
+                               onChange={e => setQuery(e.target.value)}
+                               value={query} onKeyPress={search}/>
+                    </div>
 
-                        //En primer lugar se verifica que haya datos para elegir el fondo por defecto.
-                        // En la segunda verificacion, se verifica que la temperatura sea mayor a 16 grados y si es mayor elige la imagen de fondo.
-                        (typeof weather.main != "undefined" ) ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+                    {(typeof weather.main != "undefined") ? (
+                        <div>
 
-                        <div className="search-box">
-                            <input type="text" className="search-bar" placeholder="Search..."
-                                   onChange={e => setQuery(e.target.value)}
-                                   value={query} onKeyPress={search}/>
-                        </div>
-
-                        {(typeof weather.main != "undefined") ? (
-                            <div>
-
-                                <div className="location-box">
-                                    <div className="location">{weather.name}, {weather.sys.country}</div>
-                                    <div className="date">{dateBuilder(new Date())}</div>
-                                </div>
-
-                                <div className="weather-box">
-                                    <div className="temp">
-
-                                        {/*Math.round sirve para redondear los numeros al entero mas cercano.*/}
-                                        {Math.round(weather.main.temp)}°c
-                                    </div>
-                                    <div className="weather">{weather.weather[0].main}</div>
-                                </div>
+                            <div className="location-box">
+                                <div className="location">{weather.name}, {weather.sys.country}</div>
+                                <div className="date">{dateBuilder(new Date())}</div>
                             </div>
-                        ) : ('')}
 
-                    </main>
+                            <div className="weather-box">
+                                <div className="temp">
+
+                                    {/*Math.round sirve para redondear los numeros al entero mas cercano.*/}
+                                    {Math.round(weather.main.temp)}°c
+                                </div>
+                                <div className="weather">{weather.weather[0].main}</div>
+                            </div>
+                        </div>
+                    ) : ('')}
+
+                </main>
             }
 
         </div>
