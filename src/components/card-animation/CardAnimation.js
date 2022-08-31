@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 import {Button} from "@material-ui/core";
-import React, {useState} from "react";
+import {useState} from "react";
 import '../../App.css';
 import './card.css';
 import '../../spinner.css';
@@ -9,22 +9,14 @@ import useLoading from "../useLoading";
 
 export default function  CardAnimation(){
 
-    const [isOpen, setIsOpen] = useState([false]);
-
-
-
-
-    /*spinner*/
-
     const loading = useLoading(1000);
-
+    const [isOpen, setIsOpen] = useState([false]);
 
 
     return(
         <>
 
-            {
-                loading ?
+            {loading ?
                     <SquareLoader className="spin-app" color={'#0B3C8D'} loading={loading} size={60}/>
                     :
 

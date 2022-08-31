@@ -1,11 +1,8 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import "./calculator.css";
 import '../../spinner.css';
 import RotateLoader from "react-spinners/RotateLoader";
 import useLoading from "../useLoading";
-
-
-
 
 export default function Calculadora() {
 
@@ -18,7 +15,7 @@ export default function Calculadora() {
 
         for (let i = 1; i < 10; i++) {
             digits.push(
-                <button key={i} onClick={() => updateCalc(i)} key={i}>{i}</button>
+                <button key={i} onClick={() => updateCalc(i)} >{i}</button>
             )
         }
         return digits;

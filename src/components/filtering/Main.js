@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import Movies from './Movie';
 import Filter from './Filter';
 import {motion, AnimatePresence} from "framer-motion";
@@ -11,6 +11,7 @@ export default function Main() {
 
     const apikey = '31ea4d51557c07ce32e050afb1c5494a';
 
+    const loading = useLoading(1000);
     const [popular, setPopular] = useState([]);
     const [filtered, setFiltered] = useState([]);
     const [activeGenre, setActiveGenre] = useState(0);
@@ -26,16 +27,9 @@ export default function Main() {
         const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`);
         const movies = await data.json();
 
-        console.log("Data:", movies);
-
         setPopular(movies.results);
         setFiltered(movies.results);
     }
-
-
-    /*spinner*/
-
-    const loading = useLoading(1000);
 
     return (
 

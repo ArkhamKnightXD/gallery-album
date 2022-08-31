@@ -1,7 +1,6 @@
 import {useEffect} from 'react';
 import './movie.css';
 
-
 export default function Filter({setActiveGenre, activeGenre, setFiltered, popular}){
 
     useEffect(()=> {
@@ -10,8 +9,7 @@ export default function Filter({setActiveGenre, activeGenre, setFiltered, popula
             setFiltered(popular);
             return;
         }
-        const filtered = popular.filter((movie) => movie.genre_ids.includes(activeGenre)
-        );
+        const filtered = popular.filter((movie) => movie.genre_ids.includes(activeGenre));
         setFiltered(filtered)
     }, [activeGenre]);
 
